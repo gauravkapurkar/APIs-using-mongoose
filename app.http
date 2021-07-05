@@ -1,0 +1,44 @@
+@hostname =  http://localhost:5000/teachers
+
+GET {{hostname}}
+
+###
+
+GET {{hostname}}/60e2dc95bb8cea3ca2f1cf97
+
+###
+
+POST {{hostname}}/register
+Content-Type: application/json
+
+{   
+    "name": "a",
+    "password" : "12345678"
+}
+
+###
+
+POST {{hostname}}/login/60e2dc95bb8cea3ca2f1cf97
+Content-Type: application/json
+
+
+{   
+    "name": "gaurav",
+    "password" : "12345678"
+}
+
+###
+
+PUT {{hostname}}/update/60e2dc95bb8cea3ca2f1cf97
+Content-Type: application/json
+
+{   
+    "name": "gaurav",
+    "password" : "12345678"
+}
+
+###
+
+DELETE {{hostname}}/delete/60e2dc285f23c53c48d5798f
+
+###
