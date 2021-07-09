@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "age-calculator": "^1.0.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.9",
-    "mongoose": "^5.13.2"
+    "mongoose": "^5.13.2",
+    "morgan": "^1.10.0"
   }
 }

@@ -1,10 +1,10 @@
-@hostname =  http://localhost:5000/teachers
+@hostname =  http://localhost:9000/teachers
 
 GET {{hostname}}
 
 ###
 
-GET {{hostname}}/60e2dc95bb8cea3ca2f1cf97
+GET {{hostname}}/60e8567e1062be6dd4a2619e
 
 ###
 
@@ -12,33 +12,42 @@ POST {{hostname}}/register
 Content-Type: application/json
 
 {   
-    "name": "a",
-    "password" : "12345678"
+    "personalDetails": {"name": "tom", "DOB": "1989-10-03"},
+    "courseDetails" : {"courses":["JS", "Node"]},
+    "loginDetails":{
+        "username" :"gaurav",
+        "password" : "12345678"
+    }
+
 }
 
 ###
 
-POST {{hostname}}/login/60e2dc95bb8cea3ca2f1cf97
+POST {{hostname}}/login/60e8567e1062be6dd4a2619e
 Content-Type: application/json
 
 
 {   
-    "name": "gaurav",
+    "username" :"cat",
     "password" : "12345678"
 }
 
 ###
 
-PUT {{hostname}}/update/60e2dc95bb8cea3ca2f1cf97
+PUT {{hostname}}/update/60e85eaad7631e710bd6719f
 Content-Type: application/json
 
 {   
     "name": "gaurav",
-    "password" : "12345678"
+    "username":"gdk",
+    "password" : "12345678",
+    "courseDetails" : {"courses":["JS", "Node"]}
 }
 
 ###
 
-DELETE {{hostname}}/delete/60e2dc285f23c53c48d5798f
+DELETE {{hostname}}/delete/60e85eaad7631e710bd6719f
 
 ###
+
+GET {{hostname}}
