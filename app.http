@@ -1,21 +1,28 @@
 @hostname =  http://localhost:9000/teachers
 
 GET {{hostname}}
-
+auth-token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTAzYjRlOGRiYWFmZWFkODZiN2Q2MjMiLCJpYXQiOjE2Mjc4ODc3MDksImV4cCI6MTYyNzg4NzgyOX0.XT2_mfj9H4wgJvaCSrSZXhDYT41setY7gqWyMF1HGJs
 ###
 
-GET {{hostname}}/60e8567e1062be6dd4a2619e
-
+GET {{hostname}}/6103b4e8dbaafead86b7d623
+auth-token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mjc4ODk3ODIsImV4cCI6MTYyNzk3NjE4Mn0.5kTAC-KfSgrgct1gL2892vOJF7ti6mJ47cHwLqC0wA4
 ###
 
+POST {{hostname}}/token
+Content-Type: application/json
+
+{   
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mjc4ODk3ODIsImV4cCI6MTYyNzk3NjE4Mn0.5kTAC-KfSgrgct1gL2892vOJF7ti6mJ47cHwLqC0wA4"
+}
+###
 POST {{hostname}}/register
 Content-Type: application/json
 
 {   
-    "personalDetails": {"name": "tom", "DOB": "1989-10-03"},
-    "courseDetails" : {"courses":["JS", "Node"]},
+    "personalDetails": {"name": "bill", "DOB": "1959-10-03"},
+    "courseDetails" : {"courses":["js"]},
     "loginDetails":{
-        "username" :"gaurav",
+        "username" :"bill",
         "password" : "12345678"
     }
 
@@ -23,31 +30,32 @@ Content-Type: application/json
 
 ###
 
-POST {{hostname}}/login/60e8567e1062be6dd4a2619e
+POST {{hostname}}/login/6103b4e8dbaafead86b7d623
 Content-Type: application/json
 
-
 {   
-    "username" :"cat",
+    "username" :"bill",
     "password" : "12345678"
 }
 
 ###
 
-PUT {{hostname}}/update/60e85eaad7631e710bd6719f
+PUT {{hostname}}/update/61011ac34bc729386c82eea2
 Content-Type: application/json
+auth-token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTAxMWFjMzRiYzcyOTM4NmM4MmVlYTIiLCJpYXQiOjE2Mjc0NjUzMjEsImV4cCI6MTYyNzQ2NTQ0MX0.ctiAig05lXn0yN-03L6C9uthxOC5aynijKf7sECdZY0
 
 {   
-    "name": "gaurav",
-    "username":"gdk",
+    "name": "gaurav k",
+    "username":"gaurav",
     "password" : "12345678",
     "courseDetails" : {"courses":["JS", "Node"]}
 }
 
 ###
 
-DELETE {{hostname}}/delete/60e85eaad7631e710bd6719f
-
+DELETE {{hostname}}/delete/610108bdac8b20304621dda5
+auth-token :  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTAzYjRlOGRiYWFmZWFkODZiN2Q2MjMiLCJpYXQiOjE2Mjc2Mzc0MjgsImV4cCI6MTYyNzYzNzU0OH0.wZeWvYIfqMG--zMz85PJdaD7ypPQ2BZ_d0bRE5gk29A
 ###
 
 GET {{hostname}}
+auth-token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTAxMWFjMzRiYzcyOTM4NmM4MmVlYTIiLCJpYXQiOjE2Mjc1ODE0MzEsImV4cCI6MTYyNzU4MTczMX0.7i9MA5ibZEIjjnILS1QqNuoxIpdNULlKEQ7Za_hjFnQ

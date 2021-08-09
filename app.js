@@ -1,13 +1,13 @@
 const express = require('express');
-const app = express();
-const mongoose = require('mongoose');
 const morgan = require('morgan');
+const {PORT} = require('./configurations/config_local');
+const {db} = require('./database_connections/mongoose_conn');
+
+const app = express();
 const teachers = require('./Routes/teachers');
 
-mongoose.connect('mongodb://localhost/teachers', {useNewUrlParser: true})
-const db = mongoose.connection;
-db.on('error', (err) => console.error(err))
-db.once('open', () => console.log('connected to database'))
+db.on('error', (err) => console.error(err));
+db.once('open', () => console.log('connected to database'));
 
 app.use(morgan('dev'));
 app.use(express.json());
@@ -19,7 +19,7 @@ app.use((req, res, next)=>{
     next(err)
 })
 
-app.use((error, req, res, next)=>{
+app.use((error, req, res)=>{
     res.status(error.status || 500);
     res.json({
         error:{
@@ -28,4 +28,4 @@ app.use((error, req, res, next)=>{
     })
 })
 
-app.listen(9000, () => console.log('server listening on port 9000'))
+app.listen(PORT, () => console.log(`server listening on port ${PORT}`))

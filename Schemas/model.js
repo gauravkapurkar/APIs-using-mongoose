@@ -15,11 +15,13 @@ const teacherDetails = new mongoose.Schema({
     },
     isSeniorCitizen : {
         type: Boolean,
-        // required: [true, 'isSeniorCitizen required'],
+        // eslint-disable-next-line func-names
+        // eslint-disable-next-line object-shorthand
         default : function(){
+            // eslint-disable-next-line prefer-destructuring
             const age = new AgeFromDateString(this.DOB).age;
             if(age >= 55) return true;
-            else return false;
+            return false;
         },
         required:true
         

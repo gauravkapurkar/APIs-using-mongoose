@@ -1,0 +1,12 @@
+{
+    "extends": ["airbnb", "prettier"],
+    "plugins": ["prettier"],
+    "rules": {
+        "eqeqeq":"off",
+        "consistent-return":"off",
+        "no-console":"off",
+        "camelcase":"off"
+
+
+    }
+}
